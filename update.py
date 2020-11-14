@@ -6,12 +6,11 @@ db = mysql.connector.connect(
     passwd="",
     database="toko_helm"
 )
-#add data
+
 cursor = db.cursor()
-sql = "INSERT INTO customers (name, address) VALUES (%s, %s)" #%s sebagai placeholder data yg ditambahkan
-val = ("Kate", "Malang")
+sql = "DELETE FROM customers WHERE customer_id=%s"
+val = (1, )
 cursor.execute(sql, val)
 
 db.commit()
-
-print("{} data ditambahkan".format(cursor.rowcount))
+print("{} data diubah".format(cursor.rowcount))
