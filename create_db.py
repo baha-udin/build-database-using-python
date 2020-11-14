@@ -1,5 +1,7 @@
+#import modul koneksi MySQL
 import mysql.connector
 
+#buat koneksi ke mysql
 db = mysql.connector.connect(
     host="localhost",
     user="root",
